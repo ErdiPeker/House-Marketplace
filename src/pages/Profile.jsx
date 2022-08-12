@@ -86,7 +86,7 @@ function Profile() {
         (listing) => listing.id !== listingID
       );
       setListings(updatedListings);
-      toast.success("Successfully deleted1");
+      toast.success("Successfully deleted!");
     }
   };
 

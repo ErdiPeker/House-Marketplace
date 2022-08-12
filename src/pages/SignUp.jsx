@@ -49,7 +49,7 @@ function SignUp() {
       delete formDataCopy.password;
       formDataCopy.timestamp = serverTimestamp();
 
-      setDoc(doc(db, "users", user.uid), formDataCopy);
+      await setDoc(doc(db, "users", user.uid), formDataCopy);
 
       navigate("/");
     } catch (error) {
@@ -61,7 +61,7 @@ function SignUp() {
     <>
       <div className="pageContainer">
         <header>
-          <p className="pageHeader">Welcome Back!</p>
+          <p className="pageHeader">Welcome!</p>
         </header>
 
         <form onSubmit={onSubmit}>
@@ -99,11 +99,6 @@ function SignUp() {
               onClick={() => setShowPassword((prevState) => !prevState)}
             />
           </div>
-
-          <Link to="/forgot-password" className="forgotPasswordLink">
-            {" "}
-            Forgot Password
-          </Link>
 
           <div className="signUpBar">
             <p className="signUpText">Sign Up</p>
